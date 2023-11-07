@@ -35,14 +35,27 @@
         //])
        // );
 
-async function postsByUser (userId) {
-    const promise = await fetch("https://jsonplaceholder.typicode.com/posts")
+//async function postsByUser (userId) {
+  //  const promise = await fetch("https://jsonplaceholder.typicode.com/posts")
+    
+    //const result = await promise.json();
+
+    //const posts = result.filter(element => element.userId === userId)
+
+    //console.log(posts)
+//}
+
+//postsByUser (4);
+
+//New Challenge
+async function firstSixIncomplete (userId) {
+    const promise = await fetch("https://jsonplaceholder.typicode.com/todos")
     
     const result = await promise.json();
 
-    const posts = result.filter(element => element.userId === userId)
+    const incompleteTasks = result.filter(element => !element.completed).slice(0, 6);
 
-    console.log(posts)
+    console.log(incompleteTasks)
 }
 
-postsByUser (4);
+firstSixIncomplete (0, 1, 2, 3, 4, 5);
